@@ -5,6 +5,5 @@ export async function verifyEmailWithHunter(email) {
 
   const response = await fetch(url);
   const info = await response.json();
-
   return info;
 }
