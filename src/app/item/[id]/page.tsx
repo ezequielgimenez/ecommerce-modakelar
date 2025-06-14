@@ -1,12 +1,6 @@
 import ItemComp from "components/Item";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function ItemProductPage({ params }: Props) {
+export default async function ItemProductPage({ params }: any) {
   const id = params.id;
 
   const res = await fetch(`http://localhost:3000/api/product/${id}`);
