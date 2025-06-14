@@ -2,7 +2,7 @@ import { getProductByIdController } from "controllers/products";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request, context: any) {
-  const { id } = context.params;
+  const { id } = await context.params;
   try {
     const result = await getProductByIdController(id);
     if (!result.success) {
