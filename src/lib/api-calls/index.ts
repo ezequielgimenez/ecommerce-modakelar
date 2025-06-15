@@ -13,7 +13,10 @@ export async function fetchAPI(route: RequestInfo, options: RequestInit = {}) {
     credentials: "include",
   };
 
-  const respuesta = await fetch("http://localhost:3000" + route, newOptions);
+  const respuesta = await fetch(
+    process.env.NEXT_PUBLIC_BASE_URL + route,
+    newOptions
+  );
 
   return respuesta.json();
 }
