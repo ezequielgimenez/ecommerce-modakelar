@@ -14,7 +14,8 @@ export default function UpdateDataComp() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user?.id) {
+    const userStorage = JSON.parse(sessionStorage.getItem("user"));
+    if (!user?.id && userStorage?.id) {
       router.push("/signin");
     }
   }, []);
