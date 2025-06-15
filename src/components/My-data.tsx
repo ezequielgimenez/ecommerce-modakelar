@@ -10,7 +10,7 @@ import { MyInputSmall } from "ui/input/input";
 import { MyButton } from "ui/buttons/buttons";
 
 export default function UpdateDataComp() {
-  const { user } = useUserData();
+  const { user, setDataUser } = useUserData();
   const router = useRouter();
 
   useEffect(() => {
@@ -34,11 +34,22 @@ export default function UpdateDataComp() {
       numero,
     };
 
-    await toast.promise(updateUserData(data), {
+    const result = await toast.promise(updateUserData(data), {
       loading: "Actualizando..",
       success: "Datos actualizados correctamente",
       error: "Ocurrio un error al actualizar, intentalo de nuevo",
     });
+
+    if (result.success) {
+      setDataUser({
+        ...user,
+        name,
+        address: {
+          street_name: calle,
+          street_number: numero,
+        },
+      });
+    }
 
     formReset.reset();
   };
