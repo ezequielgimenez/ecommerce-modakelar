@@ -38,6 +38,7 @@ export default function HeroMobileComp() {
               sizes="100vw"
               alt="banner1"
               className="object-cover"
+              unoptimized
             />
             <div className="absolute top-5 left-1/2 transform -translate-x-1/2 text-center text-white w-[300px]">
               <h2 className="text-[30px] font-montserrat text-[#252b42] font-[600]">
@@ -93,6 +94,7 @@ export default function HeroMobileComp() {
               sizes="100vw"
               alt="banner2"
               className="object-cover"
+              unoptimized
             />
             <div className="absolute top-5 left-1/2 transform -translate-x-1/2 text-center text-white w-[300px]">
               <h2 className="text-[30px] font-montserrat text-[#252b42] font-[600] ">

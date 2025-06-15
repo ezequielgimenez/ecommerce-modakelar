@@ -20,14 +20,15 @@ export default function HeroComp() {
         pagination={{ clickable: true }}
       >
         <SwiperSlide>
-          <div className="relative w-full h-[500px]">
+          <div className="relative w-full h-[500px] aspect-[16/9]">
             <Image
               src="/images/banner1.webp"
+              alt="banner1"
               fill
               sizes="100vw"
-              alt="banner1"
               className="object-cover"
               priority
+              unoptimized
             />
 
             <div className="absolute top-1/2 left-25 transform -translate-y-1/2 text-white max-w-md">
@@ -44,14 +45,15 @@ export default function HeroComp() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative w-full h-[500px]">
+          <div className="relative w-full h-[500px] aspect-[16/9]">
             <Image
               src="/images/banner2.webp"
+              alt="banner2"
               fill
               sizes="100vw"
-              alt="banner2"
               className="object-cover"
               priority
+              unoptimized
             />
             <div className="absolute top-1/2 left-25 transform -translate-y-1/2 text-white max-w-md">
               <h2 className="text-[45px] font-montserrat text-[#252b42] font-[600] mb-4">
@@ -67,14 +69,15 @@ export default function HeroComp() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative w-full h-[500px]">
+          <div className="relative w-full h-[500px] aspect-[16/9]">
             <Image
               src="/images/banner3.webp"
+              alt="banner1"
               fill
-              sizes="vw"
-              alt="banner3"
+              sizes="100vw"
               className="object-cover"
               priority
+              unoptimized
             />
             <div className="absolute top-1/2 left-25 transform -translate-y-1/2 text-white max-w-md">
               <h2 className="text-[45px] font-montserrat text-[#252b42] font-[600] mb-4">
