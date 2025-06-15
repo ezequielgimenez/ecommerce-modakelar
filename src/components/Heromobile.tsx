@@ -35,7 +35,7 @@ export default function HeroMobileComp() {
             <Image
               src="/images/mobile-1.webp"
               fill
-              sizes="(min-width: 360px) 360px, 100vw"
+              sizes="100vw"
               alt="banner1"
               className="object-cover"
             />
@@ -90,7 +90,7 @@ export default function HeroMobileComp() {
             <Image
               src="/images/mobile-2.webp"
               fill
-              sizes="(min-width: 360) 360px, 100vw"
+              sizes="100vw"
               alt="banner2"
               className="object-cover"
             />
