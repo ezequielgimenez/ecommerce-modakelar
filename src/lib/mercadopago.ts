@@ -57,8 +57,7 @@ export async function createSinglePreference(data: myObjectData) {
       // Esto puede ser el id o algún otro identificador
       // que te ayude a vincular este pago con el producto más adelante
       external_reference: transaction.id,
-      notification_url:
-        "https://webhook.site/02813db2-b7c7-4137-a00c-ab163fd3eb0f",
+      notification_url: process.env.NEXT_PUBLIC_BASE_URL + "/api/webhooks/mp",
     },
   });
 }
