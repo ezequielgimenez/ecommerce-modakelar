@@ -1,7 +1,13 @@
 import { Card } from "ui/cards/cards";
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  (typeof window === "undefined"
+    ? "https://mi-app.vercel.app" // (valor por defecto para build en Vercel)
+    : "http://localhost:3000"); // (valor en desarrollo)
+
 export async function ProductsDestComp() {
-  const resp = await fetch("http://localhost:3000/api/product/sync", {
+  const resp = await fetch(`${baseUrl}/api/product/sync`, {
     method: "post",
     headers: {
       "content-type": "application/json",

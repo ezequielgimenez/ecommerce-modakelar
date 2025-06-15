@@ -2,6 +2,12 @@
 
 import { useRouter } from "next/navigation";
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  (typeof window === "undefined"
+    ? "https://mi-app.vercel.app" // (valor por defecto para build en Vercel)
+    : "http://localhost:3000"); // (valor en desarrollo)
+
 type ProductProp = {
   id: string;
   name: string;
@@ -20,7 +26,7 @@ export default function ItemComp(prop: ProductProp) {
   useEffect(() => {
     const fetchApi = async () => {
       if (data) {
-        const resp = await fetch("http://localhost:3000/api/transaction", {
+        const resp = await fetch(`${baseUrl}/api/transaction`, {
           method: "post",
           headers: {
             "content-type": "application/json",
