@@ -3,17 +3,16 @@ import { Card } from "ui/cards/cards";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function ProductsDestComp() {
-  // const resp = await fetch(`${baseUrl}/api/product/sync`, {
-  //   method: "post",
-  //   headers: {
-  //     "content-type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     destacados: true,
-  //   }),
-  // });
-  // const products = await resp.json();
-  const products = null;
+  const resp = await fetch(`${baseUrl}/api/product/sync`, {
+    method: "post",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      destacados: true,
+    }),
+  });
+  const products = await resp.json();
 
   return (
     <div className="flex flex-col items-center justify-center">

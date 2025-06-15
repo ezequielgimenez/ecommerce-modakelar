@@ -5,10 +5,9 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export default async function ItemProductPage({ params }: any) {
   const id = params.id;
 
-  // const res = await fetch(`${baseUrl}/api/product/${id}`);
-  // const results = await res.json();
-  // const itemProduct = results.data;
-  const itemProduct = null;
+  const res = await fetch(`${baseUrl}/api/product/${id}`);
+  const results = await res.json();
+  const itemProduct = results.data;
   return (
     <div>
       <ItemComp
