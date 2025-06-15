@@ -26,7 +26,10 @@ export function ItemsCart() {
           error: "Ocurrió un error al procesar la compra",
         }
       );
-      router.push(result.data);
+      if (result.success) {
+        localStorage.removeItem("carrito");
+        router.push(result.data);
+      }
     }
   };
 
