@@ -66,7 +66,10 @@ export default function HeaderComp() {
         </a>
       </div>
 
-      <div className="flex justify-center w-[360px] lg:block lg:w-auto">
+      <div
+        onClick={() => router.push("/")}
+        className="flex justify-center w-[360px] lg:block lg:w-auto"
+      >
         <Logo />
       </div>
       <div className="xs:hidden lg:block lg:space-x-[10px] xl:space-x-8 ">
