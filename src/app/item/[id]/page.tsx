@@ -1,17 +1,14 @@
 import ItemComp from "components/Item";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ||
-  (typeof window === "undefined"
-    ? "https://mi-app.vercel.app" // (valor por defecto para build en Vercel)
-    : "http://localhost:3000"); // (valor en desarrollo)
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default async function ItemProductPage({ params }: any) {
   const id = params.id;
 
-  const res = await fetch(`${baseUrl}/api/product/${id}`);
-  const results = await res.json();
-  const itemProduct = results.data;
+  // const res = await fetch(`${baseUrl}/api/product/${id}`);
+  // const results = await res.json();
+  // const itemProduct = results.data;
+  const itemProduct = null;
   return (
     <div>
       <ItemComp

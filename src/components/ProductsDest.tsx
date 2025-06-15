@@ -1,22 +1,19 @@
 import { Card } from "ui/cards/cards";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ||
-  (typeof window === "undefined"
-    ? "https://mi-app.vercel.app" // (valor por defecto para build en Vercel)
-    : "http://localhost:3000"); // (valor en desarrollo)
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function ProductsDestComp() {
-  const resp = await fetch(`${baseUrl}/api/product/sync`, {
-    method: "post",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      destacados: true,
-    }),
-  });
-  const products = await resp.json();
+  // const resp = await fetch(`${baseUrl}/api/product/sync`, {
+  //   method: "post",
+  //   headers: {
+  //     "content-type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     destacados: true,
+  //   }),
+  // });
+  // const products = await resp.json();
+  const products = null;
 
   return (
     <div className="flex flex-col items-center justify-center">

@@ -2,11 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ||
-  (typeof window === "undefined"
-    ? "https://mi-app.vercel.app" // (valor por defecto para build en Vercel)
-    : "http://localhost:3000"); // (valor en desarrollo)
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 type ProductProp = {
   id: string;
@@ -23,27 +19,27 @@ export default function ItemComp(prop: ProductProp) {
   const [data, setData] = useState(null);
   const router = useRouter();
 
-  useEffect(() => {
-    const fetchApi = async () => {
-      if (data) {
-        const resp = await fetch(`${baseUrl}/api/transaction`, {
-          method: "post",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            email: data?.email,
-            productId: data?.productId,
-          }),
-        });
-        const preference = await resp.json();
-        if (preference.success) {
-          router.push(preference.data);
-        }
-      }
-    };
-    fetchApi();
-  }, [data]);
+  // useEffect(() => {
+  //   const fetchApi = async () => {
+  //     if (data) {
+  //       const resp = await fetch(`${baseUrl}/api/transaction`, {
+  //         method: "post",
+  //         headers: {
+  //           "content-type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           email: data?.email,
+  //           productId: data?.productId,
+  //         }),
+  //       });
+  //       const preference = await resp.json();
+  //       if (preference.success) {
+  //         router.push(preference.data);
+  //       }
+  //     }
+  //   };
+  //   fetchApi();
+  // }, [data]);
 
   const handleBuy = () => {
     const userSession = JSON.parse(sessionStorage.getItem("user"));
