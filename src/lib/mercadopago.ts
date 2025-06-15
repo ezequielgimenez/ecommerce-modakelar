@@ -50,9 +50,9 @@ export async function createSinglePreference(data: myObjectData) {
       },
       // URL de redirección en los distintos casos
       back_urls: {
-        success: "https://test.com/success",
-        failure: "https://test.com/failure",
-        pending: "https://test.com/pending",
+        success: process.env.NEXT_PUBLIC_BASE_URL + "/success",
+        failure: process.env.NEXT_PUBLIC_BASE_URL,
+        pending: process.env.NEXT_PUBLIC_BASE_URL,
       },
       // Esto puede ser el id o algún otro identificador
       // que te ayude a vincular este pago con el producto más adelante
