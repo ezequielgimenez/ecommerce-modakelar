@@ -25,6 +25,7 @@ export default function AuthCodeComp() {
         const infoUser = await getMe();
         if (infoUser.success) {
           setDataUser(infoUser.data);
+          toast.success("Código correcto");
           router.push("/my-data");
         }
       } else {

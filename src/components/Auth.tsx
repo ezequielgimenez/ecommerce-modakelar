@@ -15,7 +15,12 @@ export default function AuthComp() {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email").toString();
-    const result = await authUser(email);
+
+    const result = await toast.promise(authUser(email), {
+      loading: "Verificando email..",
+      success: "Te hemos enviado un código a tu email",
+      error: "Ocurrio un error",
+    });
     if (result.success) {
       sessionStorage.setItem("email", JSON.stringify(email));
       router.push("/signin/code");
