@@ -23,15 +23,15 @@ pnpm dev
   - [Airtable](https://www.airtable.com/) - Plataforma y libreria para agregar los productos de una forma mas amigable mediante celdas y luego poder guardar en la base de datos.
  
 - **APIs**:
-  - [Hunter](hhttps://hunter.io/) - API para verificar emails
+  - [Hunter](https://hunter.io/) - API para verificar emails
   - [Nodemailer](https://nodemailer.com/usage/using-gmail) - Libreria para enviar los emails.
     
 - **Otras utilidades que use**:
-  -[Jotai](https://jotai.org/) - Para la gestion de pequeños estados de mi web 
-  -[React-hot-toast](https://react-hot-toast.com/) - Libreria para generar mensajes de exito o de error cuando hago llamadas a la api
-  -[Swiper](http://swiperjs.com/) - Libreria para los sliders del inicio de la pagina
-  -[Random-seed](https://www.npmjs.com/package/random-seed) - Libreria para generar el codigo
-  -[Date-fns](https://www.npmjs.com/package/date-fns) - Libreria para generar una fecha con expiración
+  - [Jotai](https://jotai.org/) - Para la gestion de pequeños estados de mi web 
+  - [React-hot-toast](https://react-hot-toast.com/) - Libreria para generar mensajes de exito o de error cuando hago llamadas a la api
+  - [Swiper](http://swiperjs.com/) - Libreria para los sliders del inicio de la pagina
+  - [Random-seed](https://www.npmjs.com/package/random-seed) - Libreria para generar el codigo
+  - [Date-fns](https://www.npmjs.com/package/date-fns) - Libreria para generar una fecha con expiración
   
  
 - **Servicios de Hosting**:
