@@ -6,7 +6,7 @@ import {
 
 import { NextResponse } from "next/server";
 
-async function getHandler(req: Request, data) {
+async function getMeHandler(req: Request, data) {
   try {
     const result = await getMeController(data);
     if (!result.success) {
@@ -22,7 +22,7 @@ async function getHandler(req: Request, data) {
   }
 }
 
-export const GET = getMeMiddleware(getHandler);
+export const GET = getMeMiddleware(getMeHandler);
 
 export async function PUT(req: Request) {
   try {

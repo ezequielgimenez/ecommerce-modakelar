@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 type ProductProp = {
   id: string;

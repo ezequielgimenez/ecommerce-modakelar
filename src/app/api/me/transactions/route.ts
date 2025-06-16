@@ -1,13 +1,21 @@
 // GET /me/transactions Devuelve todas mis compras con sus status y productos pagados.
-
-import { getAllMeTransactions } from "controllers/me";
+import { getMeMiddleware, getAllMeTransactions } from "controllers/me";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request) {
+async function getAllMeTransactionsHandler(req: Request, data) {
   try {
     const { searchParams } = new URL(req.url);
-    const userId = searchParams.get("userId");
-    const results = await getAllMeTransactions(userId);
+    const userIdParams = searchParams.get("userId");
+    const { userId } = data; //Data que me devuelve mi middleware si sale todo bien
+
+    const idParams = Number(userIdParams);
+    if (idParams !== userId) {
+      return NextResponse.json(
+        "No puedes consultar transactions de otros users",
+        { status: 401 }
+      );
+    }
+    const results = await getAllMeTransactions(userIdParams);
     if (!results.success) {
       return NextResponse.json(results, { status: 404 });
     } else {
@@ -20,3 +28,6 @@ export async function GET(req: Request) {
     );
   }
 }
+
+//usare el middleware para que nadie pueda buscar las transactions de alguien sin estar autenticado
+export const GET = getMeMiddleware(getAllMeTransactionsHandler);

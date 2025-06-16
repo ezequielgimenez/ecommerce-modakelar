@@ -1,6 +1,6 @@
 import ItemComp from "components/Item";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export default async function ItemProductPage({ params }: any) {
   const id = params.id;
